@@ -15,10 +15,7 @@
     <h1>Upcoming & Planning</h1>
     <textarea name="Text1" cols="54" rows="20" id="Homework" style="border: 5px solid black; border-radius: 20px;">This is where you put recent and upcoming test, projects, and reminders</textarea>
     
-    <button onclick="save()">Save</button>
-<input type="file" id="File">
-<img src=" " id="ImageUpload">
-  <button onclick="add()"> Add Image </button>
+
     <script>
       // Load saved data from localStorage
       document.getElementById('Material').value = localStorage.getItem('Mat') || 'This is where new material from lessons goes';
@@ -36,7 +33,7 @@
       }
 
 
-      function add() {
+      // function add() {
         const fileInput = document.getElementById("File");
         const image = document.getElementById("ImageUpload");
 
