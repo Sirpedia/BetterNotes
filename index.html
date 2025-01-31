@@ -10,7 +10,7 @@
   </body> 
   <script>
 const Material = document.getElementById("Material")
-Material.innerHTML = localStorage.getItem("Mat")
+Material.value = localStorage.getItem("Mat")
   function save() {
     localStorage.setItem("Mat",Material)
 
