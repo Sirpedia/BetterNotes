@@ -1,0 +1,4 @@
+    <button onclick="save()">Save</button>
+<input type="file" id="File">
+<img src=" " id="ImageUpload">
+  <button onclick="add()"> Add Image </button>
