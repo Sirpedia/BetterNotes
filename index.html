@@ -37,9 +37,25 @@
 
 
       function add() {
-        reader.readAsDataURL(File)
-        Image.src = File.file
-        Image.style.display = 'inline'
+        const fileInput = document.getElementById("File");
+        const image = document.getElementById("ImageUpload");
+
+        // Check if a file is selected
+        if (fileInput.files && fileInput.files[0]) {
+          const reader = new FileReader();
+
+          // When the reader finishes loading the file
+          reader.onload = function (e) {
+            image.src = e.target.result; // Set the source to the base64 string
+            image.style.display = 'inline'; // Make the image visible
+          };
+
+          // Read the file as a data URL (base64 encoded string)
+          reader.readAsDataURL(fileInput.files[0]);
+        } else {
+          alert("Please select an image file first.");
+        }
+      }
         
       }
     </script>
