@@ -9,8 +9,8 @@
   <button onclick="save()">Save</button>
   </body> 
   <script>
-const Material = document.getElementById("Material").value
-Material = localStorage.getItem("Mat")
+const Material = document.getElementById("Material")
+Material.innerHTML = localStorage.getItem("Mat")
   function save() {
     localStorage.setItem("Mat",Material)
 
