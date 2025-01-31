@@ -1,23 +1,35 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Material</title>
+  </head>
   <body>
     <h1>New Material</h1>
-    <textarea name="Text1" cols="54" rows="20" id="Material" style="border: 5px solid black; border-radius: 20px;"> This is where new material from lessons goes</textarea>
+    <textarea name="Text1" cols="54" rows="20" id="Material" style="border: 5px solid black; border-radius: 20px;">This is where new material from lessons goes</textarea>
+    
     <h1>Vocabulary</h1>
-    <textarea name="Text1" cols="54" rows="20" id="Vocabulary" style="border: 5px solid black; border-radius: 20px;"> This is where new vocabulary goes</textarea>
+    <textarea name="Text1" cols="54" rows="20" id="Vocabulary" style="border: 5px solid black; border-radius: 20px;">This is where new vocabulary goes</textarea>
+    
     <h1>Upcoming & Planning</h1>
-    <textarea name="Text1" cols="54" rows="20" id="Homework" style="border: 5px solid black; border-radius: 20px;"> This is where you put recent and upcoming test, projects, and reminders</textarea>
-  <button onclick="save()">Save</button>
-  </body> 
-  <script>
-const Material = document.getElementById("Material")
-Material.value = localStorage.getItem("Mat")
-  function save() {
-    localStorage.setItem("Mat",Material)
+    <textarea name="Text1" cols="54" rows="20" id="Homework" style="border: 5px solid black; border-radius: 20px;">This is where you put recent and upcoming test, projects, and reminders</textarea>
+    
+    <button onclick="save()">Save</button>
 
-}
-  </script>
-  
-  
-  
-  
+    <script>
+      // Load saved data from localStorage
+      document.getElementById('Material').value = localStorage.getItem('Mat') || 'This is where new material from lessons goes';
+      document.getElementById('Vocabulary').value = localStorage.getItem('Voc') || 'This is where new vocabulary goes';
+      document.getElementById('Homework').value = localStorage.getItem('Homework') || 'This is where you put recent and upcoming test, projects, and reminders';
+
+      function save() {
+        // Save the content of each textarea to localStorage
+        localStorage.setItem('Mat', document.getElementById('Material').value);
+        localStorage.setItem('Voc', document.getElementById('Vocabulary').value);
+        localStorage.setItem('Homework', document.getElementById('Homework').value);
+      }
+    </script>
+  </body>
 </html>
+
