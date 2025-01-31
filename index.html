@@ -16,18 +16,30 @@
     <textarea name="Text1" cols="54" rows="20" id="Homework" style="border: 5px solid black; border-radius: 20px;">This is where you put recent and upcoming test, projects, and reminders</textarea>
     
     <button onclick="save()">Save</button>
-
+<input type="file" id="File">
+<img src=" " id="ImageUpload">
+  <button onclick="add()"> Add Image </button>
     <script>
       // Load saved data from localStorage
       document.getElementById('Material').value = localStorage.getItem('Mat') || 'This is where new material from lessons goes';
       document.getElementById('Vocabulary').value = localStorage.getItem('Voc') || 'This is where new vocabulary goes';
       document.getElementById('Homework').value = localStorage.getItem('Homework') || 'This is where you put recent and upcoming test, projects, and reminders';
+      const File = document.getElementById("File")
+      const Image = document.getElementById("ImageUpload")
+
 
       function save() {
         // Save the content of each textarea to localStorage
         localStorage.setItem('Mat', document.getElementById('Material').value);
         localStorage.setItem('Voc', document.getElementById('Vocabulary').value);
         localStorage.setItem('Homework', document.getElementById('Homework').value);
+      }
+
+
+      function add() {
+        Image.src = File.file
+
+        
       }
     </script>
   </body>
